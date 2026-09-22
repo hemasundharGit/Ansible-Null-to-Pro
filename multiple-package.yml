@@ -1,0 +1,29 @@
+
+- name: Install packages
+  hosts: servers
+  become: yes
+
+  vars:
+    packages:
+      - tree
+      - zip
+      - unzip
+      - wget
+      - default-jre
+      - apache2
+
+  tasks:
+
+    - name: Install packages
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop: "{{ packages }}"
+      when: ansible_facts["distribution"] == "ubuntu"
+
+    - name: Show installation
+      debug:
+        msg: "Installing {{ item }}"
+      loop: "{{ packages }}"
+

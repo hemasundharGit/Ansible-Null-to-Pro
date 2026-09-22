@@ -1,0 +1,9 @@
+- name: Hey Devops
+  hosts: servers
+  become: yes
+  
+  vars:
+    value1: devs
+  tasks:
+    - name: Greets user
+      command: echo "hello {{ value1 }}"

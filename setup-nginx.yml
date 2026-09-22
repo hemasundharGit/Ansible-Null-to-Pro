@@ -1,0 +1,25 @@
+- name: deploying a html page on multiple servers 
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: copy the index.html to worker nodes
+      copy:
+        src: index.html
+        dest: /var/www/html
+
+    - name: resatrt nginx
+      service:
+        name: nginx
+        state: restarted
+    
+    - name: Ensure Nginx is started and enabled
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true

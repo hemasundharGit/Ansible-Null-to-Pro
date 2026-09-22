@@ -1,0 +1,35 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for role/docker
+
+- name: update system
+  apt:
+    name: "*"
+    state: latest
+
+- name: install docker.io
+  apt:
+    name: docker.io
+    state: latest
+
+- name: add usres to docker
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: true
+  loop: "{{ docker_users }}"
+
+- name: restart docker
+  service:
+    name: docker
+    state: restarted
+
+- name: register docker version
+  command: docker --version
+  register: docker_version
+
+- name: show docker version
+  debug:
+    msg: "{{ docker_version }}"
+- name: show running containers
+  command: docker ps

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Color Page</title>
+    <style>
+        /* Base styles for the page structure */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6; /* Soft light gray background */
+            color: #333333;            /* Dark charcoal text for readability */
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: #2c3e50; /* Deep blue-gray heading */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Color experiment cards */
+        .color-box {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 1. Using standard Color Names */
+        .named-color {
+            background-color: Tomato;
+            color: white;
+        }
+
+        /* 2. Using Hexadecimal (HEX) codes */
+        .hex-color {
+            background-color: #3498db; /* Bright Sky Blue */
+            color: #ffffff;
+        }
+
+        /* 3. Using RGB (Red, Green, Blue) values */
+        .rgb-color {
+            background-color: rgb(46, 204, 113); /* Vibrant Emerald Green */
+            color: white;
+        }
+
+        /* 4. Custom Border styling */
+        .border-box {
+            border: 3px solid #e67e22; /* Vivid Orange border */
+            color: #d35400;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>HTML & CSS Color Showcase</h1>
+        
+        <p>This simple page demonstrates the primary ways to apply color formatting to web elements:</p>
+
+        <div class="color-box named-color">
+            Background set via Color Name ("Tomato")
+        </div>
+
+        <div class="color-box hex-color">
+            Background set via HEX Code ("#3498db")
+        </div>
+
+        <div class="color-box rgb-color">
+            Background set via RGB Value ("rgb(46, 204, 113)")
+        </div>
+
+        <div class="color-box border-box">
+            Border and Text set via Custom Colors
+        </div>
+    </div>
+
+</body>
+</html>
+
